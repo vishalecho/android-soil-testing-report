@@ -1,0 +1,111 @@
+<resources>
+    <string name="app_name">Farmss</string>
+    <string name="logo">Logo</string>
+
+    <!-- ActionBar Title text-->
+    <string name="Fill_Details">माहिती भरा</string>
+    <string name="Registration_Successful">नोंदणी पूर्ण!</string>
+    <string name="Find_Device">यंत्र शोधा</string>
+    <string name="Found_Device">यंत्र मिळाले !</string>
+    <string name="SoilTest_Result">माती परिक्षण निकाल</string>
+    <string name="Fertilizer_Recommendations">सुचवलेली खते</string>
+    <string name="Login_Register">लॉगीन/नोंदणी करा</string>
+    <string name="Select_Crop">पिके निवडा</string>
+    <string name="Profile">प्रोफाइल</string>
+    <string name="PlotSize">प्लॉट आकार</string>
+
+    <!--MainActivity-->
+    <string name="Start">सुरवात</string>
+    <string name="Welcome">सुस्वागतम्</string>
+
+    <!--LoginActivity-->
+    <string name="Mobile_Number">मोबाईल नं</string>
+    <string name="Password">पासवर्ड</string>
+    <string name="Login">लॉगीन</string>
+    <string name="GotoSignUp">सदस्य नाही ? आत्ताच नोंदणी करा !</string>
+
+    <!--RegisterActivity-->
+    <string name="Name">नाव</string>
+    <string name="Confirm_Password">पुष्टी पासवर्ड</string>
+    <string name="SignUp">नोंदणी करा</string>
+
+    <!--RegSuccessfulActivity-->
+    <string name="Welcome_To">धन्यवाद..!</string>
+    <string name="Successfully_Registered">तुम्ही “फार्म्” सोबत यशस्वीरित्या नोंदणी केली आहे !</string>
+    <string name="AddPlotSize">प्लॉट आकार जोडा </string>
+
+    <!--AddPlotSizeActivity-->
+    <string name="How_much_area_for_soil_testing">माती परिक्षण किती जागेसाठी केले आहे !</string>
+    <string name="Guntha">गुंठे</string>
+    <string name="guntha">Guntha</string>
+    <string name="Acre">एकर</string>
+    <string name="acre">Acre</string>
+
+    <!--FindDeviceActivity-->
+    <string name="Finding_Machine">यंत्र शोधित आहे....</string>
+
+    <!--FoundDeviceActivity-->
+    <string name="SoilTest_Results">माती परिक्षण दाखवा</string>
+
+    <!--ResultActivity-->
+    <string name="PH">शेतातील मातीचा (pH) </string>
+    <string name="N">मातीतील नत्र (N)</string>
+    <string name="KgPerHec">कि./ हे.</string>
+    <string name="P">मातीतील स्फुर्द (P)</string>
+    <string name="K">मातीतील पालाश (K)</string>
+
+    <!--SelectCropActivity-->
+    <string name="Cabbage">कोबी</string>
+    <string name="Onion">कांदा</string>
+    <string name="Tomato">टोमॅटो</string>
+    <string name="Chilli">मिरची</string>
+    <string name="Grapes">द्राक्ष</string>
+    <string name="Other_Crops">इतर</string>
+
+    <!--RecommendationActivity-->
+    <string name="Use_FurtilizerRecommendation">खालिलप्रमाणे खते वापरा</string>
+    <string name="Recommendation_for_N">N सुधारण्यासाठी : युरिया</string>
+    <string name="Recommendation_for_P">P सुधारण्यासाठी : पोटॅश</string>
+    <string name="Recommendation_for_K">K सुधारण्यासाठी : सुपर फॉस्फेट</string>
+    <string name="Kg">कि.</string>
+    <string name="New_SoilTest">नवीन माती परिक्षण</string>
+
+
+    <!--Bluetooth Connection-->
+    <string name="status_disconnected"> डिस्कॉननेक्टड </string>
+    <string name="status_connecting">सपंर्क करत आहे  &#8230;</string>
+    <string name="status_connected">कनेक्टेड टु  %1$s</string>
+    <string name="action_connect">कनेक्ट </string>
+    <string name="action_disconnect">डिस्कनेक्ट </string>
+    <string name="action_quit">बंद करा </string>
+    <string name="no_bluetooth">या उपकरणावर ब्लूटूथ उपलब्ध नाही </string>
+    <string name="paired_devices">जोडलेले उपकरण निवडा </string>
+    <string name="terminal_message_template">%1$s > %2$s\n</string>
+
+    <!-- Back Button PopUp -->
+    <string name="leave_application">एप्लिकेशन सोडा ?</string>
+    <string name="Leave_application_msg">तुम्ही एप्लिकेशन बंद करू इच्छिता ?</string>
+    <string name="Yes">हो </string>
+    <string name="No">नाही </string>
+
+    <!--Toast Messages-->
+    <string name="EnterMobPass">मोबाइल नंबर आणि पासवर्ड प्रविष्ट करा!</string>
+    <string name="LoginSuccess">यशस्वीरित्या लॉगिन करा !</string>
+    <string name="WrongMobPass">मोबाइल आणि पासवर्ड जुळत नाहीत!</string>
+    <string name="EnterValidMob">वैध मोबाइल नंबर प्रविष्ट करा!</string>
+    <string name="EnterValidPass">वैध संकेतशब्द प्रविष्ट करा !</string>
+
+    <!--DialogBox messages-->
+    <string name="Alert">अलर्ट!</string>
+    <string name="MobAlreadyReg">मोबाइल क्रमांक आधीच नोंदणीकृत आहे !</string>
+    <string name="Ok">ठीक आहे </string>
+
+    <!--RegisterUserForm-->
+    <string name="EnterName">नाव प्रविष्ट करा!</string>
+    <string name="Alphabetic_Only">फक्त मूळाक्षरे प्रविष्ट करा!</string>
+    <string name="EnterMobNo">मोबाइल नंबर एंटर करा !</string>
+    <string name="EnterPass">पासवर्ड टाका !</string>
+    <string name="MatchPass">पासवर्ड जुळत नाहीत नका!</string>
+    <string name="RegSuccess">यशस्वीरित्या नोंदणीकृत !</string>
+
+</resources>

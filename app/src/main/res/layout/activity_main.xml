@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="disq.farmss.MainActivity"
+    android:background="@mipmap/welcome_screen">
+    <Button
+        android:id="@+id/btn_start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/Start"
+        android:background="#C2E7F3"
+        android:textSize="32sp"
+        android:paddingTop="7sp"
+        android:paddingBottom="10sp"
+        android:paddingLeft="30sp"
+        android:paddingRight="30sp"
+        android:textColor="#00796B"
+        android:onClick="open_login_register"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/textView"
+        android:layout_alignEnd="@+id/textView" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/Welcome"
+        android:id="@+id/textView"
+        android:textSize="32sp"
+        android:textIsSelectable="false"
+        android:textColor="#00796B"
+        android:layout_marginTop="30dp"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="110dp"
+        android:layout_marginEnd="110dp" />
+</RelativeLayout>
