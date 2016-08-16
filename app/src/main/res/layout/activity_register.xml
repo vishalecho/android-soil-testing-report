@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:gravity="center"
+    android:gravity="fill_vertical"
     android:orientation="vertical"
     android:padding="10dp"
     android:background="#E3F4FD"
@@ -31,7 +34,8 @@
             android:inputType="textPersonName"
             android:maxLength="20"
             android:textColor="#666666"
-            android:id="@+id/TFname" />
+            android:id="@+id/TFname"
+            android:layout_marginBottom="@dimen/activity_vertical_margin"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -47,7 +51,8 @@
             android:textColor="#666666"
             android:inputType="number"
             android:maxLength="10"
-            android:id="@+id/TFmobile" />
+            android:id="@+id/TFmobile"
+            android:layout_marginBottom="@dimen/activity_vertical_margin"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -63,7 +68,8 @@
             android:inputType="textPassword"
             android:maxLength="8"
             android:textColor="#666666"
-            android:id="@+id/TFpass1" />
+            android:id="@+id/TFpass1"
+            android:layout_marginBottom="@dimen/activity_vertical_margin"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -79,7 +85,83 @@
             android:inputType="textPassword"
             android:maxLength="8"
             android:textColor="#666666"
-            android:id="@+id/TFpass2" />
+            android:id="@+id/TFpass2"
+            android:layout_marginBottom="@dimen/activity_vertical_margin"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="@string/hint_District"
+            android:id="@+id/textView11"
+            android:textColor="#00685B"
+            android:textSize="22sp"
+            android:layout_marginBottom="@dimen/activity_vertical_margin"/>
+        <Spinner
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/spDistrict"
+            android:spinnerMode="dropdown"
+            android:textColor="#00685B"
+            android:background="@drawable/spinnerstyle"
+            android:layout_marginBottom="@dimen/activity_vertical_margin"
+            android:entries="@array/district_name">
+        </Spinner>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="@string/hint_Tehsil"
+            android:id="@+id/txttehsil"
+            android:textColor="#00685B"
+            android:textSize="22sp"
+            android:layout_marginBottom="@dimen/activity_vertical_margin">
+        </TextView>
+
+        <Spinner
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:lines="1"
+            android:background="@drawable/spinnerstyle"
+            android:inputType="text"
+            android:textColor="#00685B"
+            android:id="@+id/spTehsil"
+            android:layout_marginBottom="@dimen/activity_vertical_margin"
+            android:spinnerMode="dropdown">
+        </Spinner>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#00796B"
+            android:text="@string/hint_Village"
+            android:id="@+id/textView9"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:singleLine="true"
+            android:textColor="#666666"
+            android:id="@+id/TFvillage"
+            android:layout_marginBottom="@dimen/activity_vertical_margin"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#00796B"
+            android:text="@string/hint_Pincode"
+            android:id="@+id/textView10"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:singleLine="true"
+            android:maxLength="6"
+            android:textColor="#666666"
+            android:id="@+id/TFpincode"
+            android:layout_marginBottom="@dimen/activity_vertical_margin"/>
 
         <Button
             android:layout_width="fill_parent"
@@ -87,6 +169,8 @@
             android:text="@string/SignUp"
             android:textColor="#00685B"
             android:layout_marginTop="20dip"
+            android:textSize="25dp"
+            android:padding="@dimen/activity_vertical_margin"
             android:background="#C2E7F3"
             android:id="@+id/ButtonRegister"
             android:layout_gravity="center_horizontal"
@@ -94,3 +178,4 @@
         </LinearLayout>
 
     </LinearLayout>
+</ScrollView>

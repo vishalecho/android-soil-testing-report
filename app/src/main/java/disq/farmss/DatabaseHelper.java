@@ -12,13 +12,17 @@ import android.database.sqlite.SQLiteOpenHelper;
 public class DatabaseHelper extends SQLiteOpenHelper {
 
     String TAG = "disq.farmss:";
-    public static final int DATABASE_VERSION= 1;
+    public static final int DATABASE_VERSION= 2;
     public static final String DATABASE_NAME = "farmss.db";
     //Customer_Table
     public static final String TABLE_NAME = "tbl_customer";
     public static final String CUST_MOBILE = "cust_mobile";
     public static final String CUST_NAME = "cust_name";
     public static final String CUST_PASSWORD= "cust_pass";
+    public static final String CUST_DISTRICT ="cust_district";
+    public static final String CUST_TEHSIL = "cust_tehsil";
+    public static final String CUST_VILLAGE = "cust_village";
+    public static final String CUST_PINCODE ="cust_pincode";
 
     //Soil_Test_Table
     public static final String TABLE_SOILTEST = "tbl_soiltest";
@@ -37,7 +41,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     long res = 0;
 
     private static final String TABLE_CUSTOMER_CREATE ="create table tbl_customer (cust_mobile text primary key not null , " +
-            "cust_name text not null, cust_pass text not null);";
+            "cust_name text not null, cust_pass text not null, cust_district text, cust_tehsil text, cust_village text, cust_pincode text );";
 
     private static final String TABLE_SOILTEST_CREATE="create table tbl_soiltest (st_mobile text not null , st_areatype text , st_areavalue text ,  "+
             "st_ph text ,st_n text , st_p text , st_k text , st_fn text , st_fp text , st_fk text );";
@@ -63,16 +67,27 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         this.onCreate(db);
     }
 
-    public void insertData(UserDataDBMethod c) {
+    public boolean insertData(UserDataDBMethod c) {
         db = this.getWritableDatabase();
         ContentValues cv = new ContentValues();
 
         cv.put(CUST_MOBILE,c.getMobile());
         cv.put(CUST_NAME,c.getName());
         cv.put(CUST_PASSWORD,c.getPass());
+        cv.put(CUST_DISTRICT,c.getDistrict());
+        cv.put(CUST_TEHSIL,c.getTehsil());
+        cv.put(CUST_VILLAGE,c.getVillage());
+        cv.put(CUST_PINCODE,c.getPincode());
         db.insert(TABLE_NAME, null, cv);
         db.close();
+        return true;
     }
+
+    /*public String getUserData(UserDataDBMethod c){
+        db = this.getReadableDatabase();
+        String query = "select * from "+TABLE_NAME;
+
+    }*/
 
     public String validateUser(String mobile) {
         db = this.getReadableDatabase();

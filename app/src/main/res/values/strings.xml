@@ -108,4 +108,63 @@
     <string name="MatchPass">पासवर्ड जुळत नाहीत नका!</string>
     <string name="RegSuccess">यशस्वीरित्या नोंदणीकृत !</string>
 
+    <!--Menu-->
+    <string name="Edit_Profile">प्रोफाईल संपादित करा</string>
+    <string name="Logout">लॉग आऊट</string>
+
+    <!--Edit Profile-->
+    <string name="hint_Name">नाव</string>
+    <string name="hint_State">राज्य</string>
+    <string name="hint_District">जिल्हा</string>
+    <string name="hint_Tehsil">तालुका </string>
+    <string name="hint_Village">गांव </string>
+    <string name="hint_Pincode">पिन कोड</string>
+    <string name="hint_Mobile">मोबाइल</string>
+    <string name="Update_Profile_btn">अद्यायावत करणे</string>
+
+
+    <string-array name="district_name">
+        <item> Select District</item>
+        <item> Ahmednagar </item>
+        <item> Akola </item>
+        <item> Amravati</item>
+        <item> Aurangabad</item>
+        <item> Beed</item>
+        <item> Bhandara</item>
+        <item> Buldhana</item>
+        <item> Chandrapur</item>
+        <item> Dhule </item>
+        <item> Gadchiroli</item>
+        <item> Gondia</item>
+        <item> Hingoli</item>
+        <item> Jalgaon</item>
+        <item> Jalna</item>
+        <item> Kolhapur</item>
+        <item> Latur</item>
+        <item> Mumbai City</item>
+        <item> Mumbai Suburban</item>
+        <item> Nagpur</item>
+        <item> Nanded</item>
+        <item> Nandurbar</item>
+        <item> Nashik</item>
+        <item> Osmanabad</item>
+        <item> Parbhani</item>
+        <item> Pune</item>
+        <item> Raigad</item>
+        <item> Ratnagiri</item>
+        <item> Sangli</item>
+        <item> Satara</item>
+        <item> Sindhudurg</item>
+        <item> Solapur</item>
+        <item> Thane</item>
+        <item> Wardha</item>
+        <item> Washim</item>
+        <item> Yavatmal</item>
+        <item> Palghar</item>
+    </string-array>
+
+    <string name="Enter_only_Alphabets">मूळाक्षरे प्रविष्ट करा</string>
+    <string name="Enter_Valid_Pincode">वैध पिनकोड प्रविष्ट करा</string>
+    <string name="Enter_Village">गांव प्रविष्ट करा</string>
+    <string name="Try_again">पुन्हा प्रयत्न करा..!</string>
 </resources>

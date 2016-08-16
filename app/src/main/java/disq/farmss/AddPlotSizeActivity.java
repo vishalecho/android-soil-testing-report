@@ -7,6 +7,8 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.RadioButton;
@@ -69,6 +71,32 @@ public class AddPlotSizeActivity extends Activity {
         rb = (RadioButton)findViewById(selectedID);
         plotSize = (EditText)findViewById(R.id.PlotSizeValue);
         rb1 = rb.getText().toString();
+    }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.menu_tab, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+
+        try{
+            switch (item.getItemId()) {
+                case R.id.EditProfile:
+                    startActivity(new Intent(this,UserProfileActivity.class));
+                    break;
+                default:
+                    return super.onOptionsItemSelected(item);
+            }
+        }catch(Exception e){
+
+        }
+        return true;
     }
     public void FindDevice(View view){
         if(view.getId()==R.id.addPlotSize){

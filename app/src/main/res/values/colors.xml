@@ -5,4 +5,5 @@
     <color name="colorAccent">#FF4081</color>
     <color name="actionbar_background">#36AD86</color>
     <color name="actionbar_text">#ffffff</color>
+    <color name="InputBg">#C5E9FB</color>
 </resources>
