@@ -33,6 +33,7 @@ public class UserDataDBMethod {
     public String getState(){
         return this.getState();
     }*/
+
     public void setDistrict(String district){
         this.district = district;
     }
