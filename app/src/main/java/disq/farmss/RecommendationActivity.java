@@ -10,6 +10,8 @@ import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 
+import disq.farmss.cloud.RestReaderAsync;
+
 public class RecommendationActivity extends Activity {
 
     EditText RN,RP,RK;
@@ -78,6 +80,7 @@ public class RecommendationActivity extends Activity {
     public void Open_Login_Register(View view){
         Intent intent = new Intent(RecommendationActivity.this,AddPlotSizeActivity.class);
         InsertSoilTestResult();
+        new RestReaderAsync(getApplicationContext()).execute();
         startActivity(intent);
         finish();
     }
