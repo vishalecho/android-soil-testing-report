@@ -29,8 +29,8 @@ public class LoginActivity extends Activity{
             }else {
                 editTextMobile.setText("");
                 editTextPassword.setText("");
-                Toast t = Toast.makeText(LoginActivity.this,getString(R.string.EnterMobPass),Toast.LENGTH_SHORT);
-                t.show();
+                //Toast t = Toast.makeText(LoginActivity.this,getString(R.string.EnterMobPass),Toast.LENGTH_SHORT);
+                //t.show();
             }
         }
         if (view.getId()==R.id.btnregister){

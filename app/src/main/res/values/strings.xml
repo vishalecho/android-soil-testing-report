@@ -167,4 +167,6 @@
     <string name="Enter_Valid_Pincode">वैध पिनकोड प्रविष्ट करा</string>
     <string name="Enter_Village">गांव प्रविष्ट करा</string>
     <string name="Try_again">पुन्हा प्रयत्न करा..!</string>
+    <string name="Select_District">जिल्हा निवडा</string>
+    <string name="Select_Tehsil">तालुका निवडा</string>
 </resources>

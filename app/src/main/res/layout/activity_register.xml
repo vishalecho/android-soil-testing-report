@@ -35,7 +35,7 @@
             android:maxLength="20"
             android:textColor="#666666"
             android:id="@+id/TFname"
-            android:layout_marginBottom="@dimen/activity_vertical_margin"/>
+            android:layout_marginBottom="10dp"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -52,7 +52,7 @@
             android:inputType="number"
             android:maxLength="10"
             android:id="@+id/TFmobile"
-            android:layout_marginBottom="@dimen/activity_vertical_margin"/>
+            android:layout_marginBottom="10dp"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -69,7 +69,7 @@
             android:maxLength="8"
             android:textColor="#666666"
             android:id="@+id/TFpass1"
-            android:layout_marginBottom="@dimen/activity_vertical_margin"/>
+            android:layout_marginBottom="10dp"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -86,7 +86,7 @@
             android:maxLength="8"
             android:textColor="#666666"
             android:id="@+id/TFpass2"
-            android:layout_marginBottom="@dimen/activity_vertical_margin"/>
+            android:layout_marginBottom="10dp"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -95,7 +95,7 @@
             android:id="@+id/textView11"
             android:textColor="#00685B"
             android:textSize="22sp"
-            android:layout_marginBottom="@dimen/activity_vertical_margin"/>
+            android:layout_marginBottom="10dp"/>
         <Spinner
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -103,7 +103,7 @@
             android:spinnerMode="dropdown"
             android:textColor="#00685B"
             android:background="@drawable/spinnerstyle"
-            android:layout_marginBottom="@dimen/activity_vertical_margin"
+            android:layout_marginBottom="10dp"
             android:entries="@array/district_name">
         </Spinner>
 
@@ -115,7 +115,7 @@
             android:id="@+id/txttehsil"
             android:textColor="#00685B"
             android:textSize="22sp"
-            android:layout_marginBottom="@dimen/activity_vertical_margin">
+            android:layout_marginBottom="10dp">
         </TextView>
 
         <Spinner
@@ -126,7 +126,7 @@
             android:inputType="text"
             android:textColor="#00685B"
             android:id="@+id/spTehsil"
-            android:layout_marginBottom="@dimen/activity_vertical_margin"
+            android:layout_marginBottom="10dp"
             android:spinnerMode="dropdown">
         </Spinner>
 
@@ -144,7 +144,7 @@
             android:singleLine="true"
             android:textColor="#666666"
             android:id="@+id/TFvillage"
-            android:layout_marginBottom="@dimen/activity_vertical_margin"/>
+            android:layout_marginBottom="10dp"/>
 
         <TextView
             android:layout_width="match_parent"
@@ -161,7 +161,7 @@
             android:maxLength="6"
             android:textColor="#666666"
             android:id="@+id/TFpincode"
-            android:layout_marginBottom="@dimen/activity_vertical_margin"/>
+            android:layout_marginBottom="10dp"/>
 
         <Button
             android:layout_width="fill_parent"
@@ -170,7 +170,7 @@
             android:textColor="#00685B"
             android:layout_marginTop="20dip"
             android:textSize="25dp"
-            android:padding="@dimen/activity_vertical_margin"
+            android:padding="5dp"
             android:background="#C2E7F3"
             android:id="@+id/ButtonRegister"
             android:layout_gravity="center_horizontal"

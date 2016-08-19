@@ -100,6 +100,16 @@ public class RegisterActivity extends Activity implements OnItemSelectedListener
             password1.setError(null);
         }
 
+        if(district.getSelectedItem().toString().trim() == "Select District"){
+            Toast.makeText(RegisterActivity.this, getString(R.string.Select_District), Toast.LENGTH_SHORT).show();
+            valid=false;
+        }
+
+        if(tehsil.getSelectedItem().toString().trim() == "Select Tehsil"){
+            Toast.makeText(RegisterActivity.this, getString(R.string.Select_Tehsil), Toast.LENGTH_SHORT).show();
+            valid=false;
+        }
+
         if (village.getText().toString().length()==0){
             village.setError(getString(R.string.Enter_Village));
             valid=false;
@@ -189,6 +199,7 @@ public class RegisterActivity extends Activity implements OnItemSelectedListener
 
         if (sp1.contentEquals("Nashik")) {
             List<String> list = new ArrayList<String>();
+            list.add("Select Tehsil");
             list.add("Baglan");
             list.add("Chandvad");
             list.add("Deola");
