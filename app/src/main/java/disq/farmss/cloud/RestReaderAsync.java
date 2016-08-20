@@ -56,7 +56,7 @@ public class RestReaderAsync extends AsyncTask<Void, Void, Void> {
             URLConnection conn = url.openConnection();
             conn.setDoOutput(true);
             OutputStreamWriter writer = new OutputStreamWriter(conn.getOutputStream());
-            String postURL = "key=dGNzLUludGVHcmEtRGlnaXRhbCBGYXJtaW5nLUt3aWskZW5zZS12MQ==&jsonData={\"request\":\"InsertObservation\",\"service\":\"SOS\",\"version\":\"2.0.0\",\"offering\":\"off-SoilHealthPOC\",\"observation\":{\"query_id\":\"" + "obs9999"+observationID + "\",\"sensor\":\"SoilHealthPOCParams\",\"feature\":\"SoilHealthPOC\",\"geometry\":{\"type\":\"Point\",\"coordinates\":[51.935101100104916,7.651968812254194]},\"phenomenonTime\":\"" + timeStamp + "\",\"resultTime\":\"" + timeStamp + "\",\"output\":[{\"property\": \"" + soilParameter + "\",\"unit\": \"" + unit + "\",\"value\": \"" + value + "\",\"type\": \"" + dataType + "\"}]}}";
+            String postURL = "key=dGNzLUludGVHcmEtRGlnaXRhbCBGYXJtaW5nLUt3aWskZW5zZS12MQ==&jsonData={\"request\":\"InsertObservation\",\"service\":\"SOS\",\"version\":\"2.0.0\",\"offering\":\"off-SoilHealthPOC\",\"observation\":{\"query_id\":\"" + "obs8888"+observationID + "\",\"sensor\":\"SoilHealthPOCParams\",\"feature\":\"SoilHealthPOC\",\"geometry\":{\"type\":\"Point\",\"coordinates\":[51.935101100104916,7.651968812254194]},\"phenomenonTime\":\"" + timeStamp + "\",\"resultTime\":\"" + timeStamp + "\",\"output\":[{\"property\": \"" + soilParameter + "\",\"unit\": \"" + unit + "\",\"value\": \"" + value + "\",\"type\": \"" + dataType + "\"}]}}";
             writer.write(postURL);
             writer.flush();
             String line = null;

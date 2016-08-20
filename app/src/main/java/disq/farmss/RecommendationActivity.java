@@ -29,17 +29,17 @@ public class RecommendationActivity extends Activity {
         Bundle b = i.getExtras();
 
         result_n = (int) b.getDouble("FNC");
-        Log.i("disq.farmss:",Double.toString(result_n));
+        Log.i(TAG,Double.toString(result_n));
         RN = (EditText) findViewById(R.id.result_nvalue);
         RN.setText(String.valueOf(result_n));
 
         result_p = (int) b.getDouble("FPC");
-        Log.i("disq.farmss:",Double.toString(result_p));
+        Log.i(TAG,Double.toString(result_p));
         RP = (EditText) findViewById(R.id.result_pvalue);
         RP.setText(String.valueOf(result_p));
 
         result_k =(int)  b.getDouble("FKC");
-        Log.i("disq.farmss:",Double.toString(result_k));
+        Log.i(TAG,Double.toString(result_k));
         RK = (EditText) findViewById(R.id.result_kvalue);
         RK.setText(String.valueOf(result_k));
 
