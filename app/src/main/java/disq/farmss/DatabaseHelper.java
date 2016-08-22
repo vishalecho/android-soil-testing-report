@@ -12,7 +12,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 public class DatabaseHelper extends SQLiteOpenHelper {
 
     String TAG = "disq.farmss:";
-    public static final int DATABASE_VERSION= 2;
+    public static final int DATABASE_VERSION= 3;
     public static final String DATABASE_NAME = "farmss.db";
     //Customer_Table
     public static final String TABLE_NAME = "tbl_customer";
@@ -27,7 +27,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     //Soil_Test_Table
     public static final String TABLE_SOILTEST = "tbl_soiltest";
     public static final String ST_MOBILE = "st_mobile";
-    public static final String ST_TRANSACTION_ID="TID";
+    public static final String ST_TRANSACTION_ID="st_tid";
     public static final String ST_AREATYPE ="st_areatype";
     public static final String ST_AREAVALUE = "st_areavalue";
     public static final String ST_PH_VALUE = "st_ph";
@@ -44,7 +44,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     private static final String TABLE_CUSTOMER_CREATE ="create table tbl_customer (cust_mobile text primary key not null , " +
             "cust_name text not null, cust_pass text not null, cust_district text, cust_tehsil text, cust_village text, cust_pincode text );";
 
-    private static final String TABLE_SOILTEST_CREATE="create table tbl_soiltest (st_mobile text not null ,TID text primary key not null , st_areatype text , st_areavalue text ,  "+
+    private static final String TABLE_SOILTEST_CREATE="create table tbl_soiltest (st_mobile text not null ,st_tid text not null , st_areatype text , st_areavalue text ,  "+
             "st_ph text ,st_n text , st_p text , st_k text , st_fn text , st_fp text , st_fk text );";
 
     public DatabaseHelper(Context context) {
