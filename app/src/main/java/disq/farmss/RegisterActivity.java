@@ -72,12 +72,12 @@ public class RegisterActivity extends ActionBarActivity implements OnItemSelecte
 
     private boolean ValidateRegister() {
         boolean valid=true;
-        if(name.getText().toString().length()==0){
+        if(name.getText().toString().trim().length()==0){
             name.setError(getString(R.string.EnterName));
             valid=false;
         }else{
             Pattern ps= Pattern.compile("^[a-zA-Z ]+$");
-            Matcher ms= ps.matcher(name.getText().toString());
+            Matcher ms= ps.matcher(name.getText().toString().trim());
             boolean bs =ms.matches();
             if(bs==false){
                 name.setError(getString(R.string.Alphabetic_Only));
@@ -86,14 +86,14 @@ public class RegisterActivity extends ActionBarActivity implements OnItemSelecte
             else name.setError(null);
         }
 
-        if(mobile.getText().toString().length()<10){
+        if(mobile.getText().toString().trim().length()<10){
             mobile.setError(getString(R.string.EnterMobNo));
             valid=false;
         }else{
             mobile.setError(null);
         }
 
-        if (password1.getText().toString().length()==0){
+        if (password1.getText().toString().trim().length()==0){
             password1.setError(getString(R.string.EnterPass));
             valid=false;
         }else {
@@ -110,12 +110,12 @@ public class RegisterActivity extends ActionBarActivity implements OnItemSelecte
             valid=false;
         }
 
-        if (village.getText().toString().length()==0){
+        if (village.getText().toString().trim().length()==0){
             village.setError(getString(R.string.Enter_Village));
             valid=false;
         }else{
             Pattern ps= Pattern.compile("^[a-zA-Z ]+$");
-            Matcher ms= ps.matcher(village.getText().toString());
+            Matcher ms= ps.matcher(village.getText().toString().trim());
             boolean bs =ms.matches();
             if(bs==false){
                 village.setError(getString(R.string.Enter_only_Alphabets));
@@ -124,7 +124,7 @@ public class RegisterActivity extends ActionBarActivity implements OnItemSelecte
             else village.setError(null);
         }
 
-        if(pincode.getText().toString().length()<6){
+        if(pincode.getText().toString().trim().length()<6){
             pincode.setError(getString(R.string.Enter_Valid_Pincode));
             valid=false;
         }else{
@@ -135,14 +135,14 @@ public class RegisterActivity extends ActionBarActivity implements OnItemSelecte
     }
 
     private void AddUser() {
-        String str_name = name.getText().toString();
-        String str_mobile = mobile.getText().toString();
-        String str_password1 = password1.getText().toString();
-        String str_password2 = password2.getText().toString();
-        String str_district = district.getSelectedItem().toString();
-        String str_tehsil = tehsil.getSelectedItem().toString();
-        String str_village = village.getText().toString();
-        String str_pincode = pincode.getText().toString();
+        String str_name = name.getText().toString().trim();
+        String str_mobile = mobile.getText().toString().trim();
+        String str_password1 = password1.getText().toString().trim();
+        String str_password2 = password2.getText().toString().trim();
+        String str_district = district.getSelectedItem().toString().trim();
+        String str_tehsil = tehsil.getSelectedItem().toString().trim();
+        String str_village = village.getText().toString().trim();
+        String str_pincode = pincode.getText().toString().trim();
 
         if (!str_password1.equals(str_password2)){
             Toast t1 = Toast.makeText(RegisterActivity.this,getString(R.string.MatchPass),Toast.LENGTH_SHORT);
@@ -163,7 +163,8 @@ public class RegisterActivity extends ActionBarActivity implements OnItemSelecte
                 Toast t2 = Toast.makeText(RegisterActivity.this, getString(R.string.RegSuccess), Toast.LENGTH_SHORT);
                 t2.show();
                 SharedPreferences.Editor editor = sharedPref.edit();
-                editor.putString("Register_Mobile", str_mobile);
+                editor.putString("Login_Mobile", str_mobile);
+                editor.commit();
                 Intent intent = new Intent(RegisterActivity.this, RegSuccessfulActivity.class);
                 startActivity(intent);
                 finish();

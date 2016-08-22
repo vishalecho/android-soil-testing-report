@@ -4,10 +4,13 @@ package disq.farmss;
  * Created by vishal on 25/7/16.
  */
 public class SoilTestResultDBMethod {
-    String mobile,areaType,areaValue,pH,N,P,K,FN,FP,FK;
+    String mobile,TID,areaType,areaValue,pH,N,P,K,FN,FP,FK;
 
     public void setMobile(String mobile){ this.mobile = mobile;}
     public String getMobile(){return this.mobile;}
+
+    public void setTID(String TID){ this.TID = TID;}
+    public String getTID(){return this.TID;}
 
     public void setAreaType(String areaType){ this.areaType = areaType;}
     public String getAreaType(){return this.areaType;}

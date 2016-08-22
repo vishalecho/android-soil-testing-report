@@ -11,11 +11,14 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import java.sql.Timestamp;
+import java.util.Date;
+
 public class TestResultActivity extends ActionBarActivity {
 
     private static Button button_selectcrop;
     EditText pH, N, P, K;
-    String TAG = "disq.farmss";
+    String TAG = "disq.farmss:";
     SharedPreferences sharedPref;
 
     @Override
@@ -23,6 +26,20 @@ public class TestResultActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_result);
         sharedPref = this.getSharedPreferences("MyPref", 0);
+
+        //Generating Current TimeStamp
+        Date date= new Date();
+        long time = date.getTime();
+        Timestamp ts = new Timestamp(time);
+
+        //Generating unique Transaction id
+        String mob = sharedPref.getString("Login_Mobile",null);
+        String Transaction_Id = ts.toString()+" "+mob;
+        SharedPreferences.Editor editor1 = sharedPref.edit();
+        Log.i(TAG, Transaction_Id);
+        editor1.putString("Transaction_ID",Transaction_Id);
+        editor1.commit();
+
         pH = (EditText) findViewById(R.id.phvalue);
         N = (EditText) findViewById(R.id.nvalue);
         P = (EditText) findViewById(R.id.pvalue);
@@ -41,20 +58,23 @@ public class TestResultActivity extends ActionBarActivity {
                         SharedPreferences.Editor editor = sharedPref.edit();
 
                         int int_pH = Integer.parseInt(pH.getText().toString());
+                        Log.i(TAG, String.valueOf(int_pH));
                         editor.putInt("pH",int_pH);
+
                         int int_n= Integer.parseInt(N.getText().toString());
                         Log.i(TAG, String.valueOf(int_n));
                         editor.putInt("N",int_n);
+
                         int int_p= Integer.parseInt(P.getText().toString());
                         Log.i(TAG, String.valueOf(int_p));
                         editor.putInt("P",int_p);
+
                         int int_k= Integer.parseInt(K.getText().toString());
                         Log.i(TAG, String.valueOf(int_k));
                         editor.putInt("K",int_k);
-                        //int[] NPK ={int_n,int_p,int_k};
+
                         Intent intent = new Intent(TestResultActivity.this,SelectCropActivity.class);
-                        //Bundle b = new Bundle();
-                        //intent.putExtra("Values",NPK);
+
                         editor.commit();
                         startActivity(intent);
                         finish();

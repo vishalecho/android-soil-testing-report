@@ -68,14 +68,14 @@ public class LoginActivity extends ActionBarActivity{
 
     Boolean Validate() {
             boolean valid=true;
-            if(editTextMobile.getText().toString().length()<10){
+            if(editTextMobile.getText().toString().trim().length()<10){
             editTextMobile.setError(getString(R.string.EnterValidMob));
             valid = false;
             }else{
             editTextMobile.setError(null);
             }
 
-            if(editTextPassword.getText().toString().length()==0){
+            if(editTextPassword.getText().toString().trim().length()==0){
             editTextPassword.setError(getString(R.string.EnterValidPass));
             valid = false;
             }else{

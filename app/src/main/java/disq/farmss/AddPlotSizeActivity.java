@@ -71,6 +71,21 @@ public class AddPlotSizeActivity extends ActionBarActivity {
         rb = (RadioButton)findViewById(selectedID);
         plotSize = (EditText)findViewById(R.id.PlotSizeValue);
         rb1 = rb.getText().toString();
+
+        /*SharedPreferences sharedPref;
+        sharedPref = this.getSharedPreferences("MyPref", 0);
+        //Generating Current TimeStamp
+        Date date= new Date();
+        long time = date.getTime();
+        Timestamp ts = new Timestamp(time);
+
+
+        //Generating unique Transaction id
+        String mob = sharedPref.getString("Login_Mobile",null);
+        String Transaction_Id = ts.toString()+" "+mob;
+        Toast t2 = Toast.makeText(AddPlotSizeActivity.this, Transaction_Id , Toast.LENGTH_LONG);
+        t2.show();
+        */
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

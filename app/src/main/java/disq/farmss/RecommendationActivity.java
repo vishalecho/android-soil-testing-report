@@ -87,6 +87,7 @@ public class RecommendationActivity extends ActionBarActivity {
 
     private void InsertSoilTestResult() {
         String Str_mobile = sharedPref.getString("Login_Mobile",null);
+        String Str_TID = sharedPref.getString("Transaction_ID",null);
         String Str_area_type = sharedPref.getString("land_type",null);
         String Str_area_value = String.valueOf(sharedPref.getFloat("plot_size",0.0f));
         String Str_ph = String.valueOf(sharedPref.getInt("pH",0));
@@ -99,6 +100,7 @@ public class RecommendationActivity extends ActionBarActivity {
 
         SoilTestResultDBMethod str = new SoilTestResultDBMethod();
         str.setMobile(Str_mobile);
+        str.setTID(Str_TID);
         str.setAreaType(Str_area_type);
         str.setAreaValue(Str_area_value);
         str.setpH(Str_ph);
