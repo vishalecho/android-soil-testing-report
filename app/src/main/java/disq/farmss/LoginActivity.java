@@ -1,14 +1,15 @@
 package disq.farmss;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
+import android.view.Menu;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
-public class LoginActivity extends Activity{
+public class LoginActivity extends ActionBarActivity{
 
     DatabaseHelper dbhelper = new DatabaseHelper(this);
     EditText editTextMobile;
@@ -22,6 +23,13 @@ public class LoginActivity extends Activity{
         editTextPassword = (EditText)findViewById(R.id.ETpassword);
         sharedPref = this.getSharedPreferences("MyPref", 0);
     }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.sync_menu, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
     public void OnButtonClick(View view){
         if (view.getId()==R.id.btnlogin){
             if(Validate()){

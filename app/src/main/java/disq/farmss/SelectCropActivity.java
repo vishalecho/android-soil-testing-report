@@ -1,15 +1,15 @@
 package disq.farmss;
 
-import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
 import android.view.View;
 
-public class SelectCropActivity extends Activity {
+public class SelectCropActivity extends ActionBarActivity {
     int SN,SP,SK;
     double FN,FP,FK;
     String TAG = "disq.farmss:";

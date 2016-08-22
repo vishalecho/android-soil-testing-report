@@ -1,18 +1,18 @@
 package disq.farmss;
 
-import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 
 import disq.farmss.cloud.RestReaderAsync;
 
-public class RecommendationActivity extends Activity {
+public class RecommendationActivity extends ActionBarActivity {
 
     EditText RN,RP,RK;
     SharedPreferences sharedPref;

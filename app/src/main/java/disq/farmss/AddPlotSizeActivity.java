@@ -1,12 +1,12 @@
 package disq.farmss;
 
-import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -16,7 +16,7 @@ import android.widget.RadioGroup;
 
 import java.util.HashMap;
 
-public class AddPlotSizeActivity extends Activity {
+public class AddPlotSizeActivity extends ActionBarActivity {
 
     RadioGroup PlotType;
     RadioButton rb;

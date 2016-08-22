@@ -10,10 +10,11 @@
         android:label="@string/app_name"
         android:largeHeap="true"
         android:supportsRtl="true"
-        tools:ignore="HardcodedDebugMode">
+        tools:ignore="HardcodedDebugMode"
+        android:theme="@style/AppTheme">
         <activity
             android:name=".MainActivity"
-            android:theme="@style/Theme.AppCompat.NoActionBar">
+            android:theme="@style/Translucent">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -22,8 +23,7 @@
         </activity>
         <activity
             android:name=".RegisterActivity"
-            android:label="@string/Fill_Details"
-            android:theme="@style/custom_actionbar_style">
+            android:label="@string/Fill_Details">
             <intent-filter>
                 <action android:name="disq.farmss.register" />
 
@@ -40,8 +40,7 @@
 
         <activity
             android:name=".RegSuccessfulActivity"
-            android:label="@string/Registration_Successful"
-            android:theme="@style/custom_actionbar_style">
+            android:label="@string/Registration_Successful">
             <intent-filter>
                 <action android:name="disq.farmss.RegistrationSuccessFull" />
 
@@ -50,8 +49,7 @@
         </activity>
         <activity
             android:name=".FindDeviceActivity"
-            android:label="@string/Find_Device"
-            android:theme="@style/CustomActionBarTheme">
+            android:label="@string/Find_Device">
             <intent-filter>
                 <action android:name="disq.farmss.findMachine" />
 
@@ -60,68 +58,55 @@
         </activity>
         <activity
             android:name=".FoundDeviceActivity"
-            android:label="@string/Found_Device"
-            android:theme="@style/custom_actionbar_style">
+            android:label="@string/Found_Device">
             <intent-filter>
                 <action android:name="disq.farmss.foundMachine" />
-
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
         <activity
             android:name=".TestResultActivity"
-            android:label="@string/SoilTest_Result"
-            android:theme="@style/custom_actionbar_style">
+            android:label="@string/SoilTest_Result">
             <intent-filter>
                 <action android:name="disq.farmss.result" />
-
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
         <activity
             android:name=".RecommendationActivity"
-            android:label="@string/Fertilizer_Recommendations"
-            android:theme="@style/custom_actionbar_style">
+            android:label="@string/Fertilizer_Recommendations">
             <intent-filter>
                 <action android:name="disq.farmss.recommendation" />
-
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
         <activity
             android:name=".LoginActivity"
-            android:label="@string/Login_Register"
-            android:theme="@style/custom_actionbar_style">
+            android:label="@string/Login_Register">
             <intent-filter>
                 <action android:name="disq.farmss.Login_register" />
-
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
         <activity
             android:name=".SelectCropActivity"
-            android:label="@string/Select_Crop"
-            android:theme="@style/custom_actionbar_style">
+            android:label="@string/Select_Crop">
             <intent-filter>
                 <action android:name="disq.farmss.SelectCrop" />
-
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
         <activity
             android:name=".UserProfileActivity"
-            android:label="@string/Profile"
-            android:theme="@style/custom_actionbar_style">
+            android:label="@string/Profile">
             <intent-filter>
                 <action android:name="disq.farmss.Profile" />
-
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
         <activity
             android:name=".AddPlotSizeActivity"
-            android:label="@string/PlotSize"
-            android:theme="@style/custom_actionbar_style">
+            android:label="@string/PlotSize">
             <intent-filter>
                 <action android:name="disq.farmss.Add_TotalArea" />
 

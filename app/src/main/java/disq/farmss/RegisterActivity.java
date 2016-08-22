@@ -1,11 +1,11 @@
 package disq.farmss;
 
-import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
@@ -19,7 +19,7 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class RegisterActivity extends Activity implements OnItemSelectedListener {
+public class RegisterActivity extends ActionBarActivity implements OnItemSelectedListener {
 
     EditText name,mobile,password1,password2,village,pincode;
     Spinner district,tehsil;

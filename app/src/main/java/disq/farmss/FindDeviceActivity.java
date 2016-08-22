@@ -7,8 +7,8 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.AlertDialog;
-import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ScrollView;
@@ -17,7 +17,7 @@ import android.widget.TextView;
 import disq.library.BluetoothDeviceListDialog;
 import disq.library.BluetoothSerial;
 import disq.library.BluetoothSerialListener;
-public class FindDeviceActivity extends AppCompatActivity implements BluetoothSerialListener, BluetoothDeviceListDialog.OnDeviceSelectedListener
+public class FindDeviceActivity extends ActionBarActivity implements BluetoothSerialListener, BluetoothDeviceListDialog.OnDeviceSelectedListener
 {
     private static final int REQUEST_ENABLE_BLUETOOTH = 1;
     private BluetoothSerial bluetoothSerial;

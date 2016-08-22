@@ -1,22 +1,17 @@
 <resources>
-    <style name="AppTheme" parent="@android:style/Theme.Holo.Light"/>
-
-    <style name="custom_actionbar_style" parent="@android:style/Theme.Holo.Light">
-        <item name="android:actionBarStyle">@style/custom_style</item>
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">#36AD86</item>
+        <item name="colorPrimaryDark">#3FC398</item>
+        <item name="colorAccent">#36AD86</item>
     </style>
 
-    <style name="custom_style" parent="@android:style/Widget.Holo.Light.ActionBar.Solid.Inverse">
-        <item name="android:background">@color/actionbar_background</item>
-    </style>
+    <style name="Translucent" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimaryDark">#36AD86</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowIsTranslucent">true</item>
 
-    <style name="CustomActionBarTheme" parent="@style/Theme.AppCompat.Light">
-        <item name="android:actionBarStyle">@style/MyActionBar</item>
-        <item name="actionBarStyle">@style/MyActionBar</item>
-    </style>
-
-    <style name="MyActionBar" parent="@style/Widget.AppCompat.Light.ActionBar.Solid.Inverse">
-        <item name="android:background">@color/actionbar_background</item>
-        <item name="background">@color/actionbar_background</item>
     </style>
 
 </resources>
