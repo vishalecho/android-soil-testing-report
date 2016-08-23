@@ -37,10 +37,18 @@ public class RestReaderAsync extends AsyncTask<Void, Void, Void> {
         String Str_n = String.valueOf(sharedPref.getInt("N",0));
         String Str_p = String.valueOf(sharedPref.getInt("P",0));
         String Str_k = String.valueOf(sharedPref.getInt("K",0));
-        pushToCloud(++obsCount, time, "SoilpH", "phvalue", Str_ph, "double");
-        pushToCloud(++obsCount, time, "Urea", "value", Str_n, "double");
-        pushToCloud(++obsCount, time, "potassium", "value", Str_p, "double");
-        pushToCloud(++obsCount, time, "superphosphate", "phvalue", Str_k, "double");
+        //String Str_suggested_ph = String.valueOf(sharedPref.getInt("SpH",0));
+        String Str_suggested_n = String.valueOf(sharedPref.getInt("SN",0));
+        String Str_suggested_p = String.valueOf(sharedPref.getInt("SP",0));
+        String Str_suggested_k = String.valueOf(sharedPref.getInt("SK",0));
+        pushToCloud(++obsCount, time, "N", "nvalue", Str_n, "double");
+        pushToCloud(++obsCount, time, "P", "pvalue", Str_p, "double");
+        pushToCloud(++obsCount, time, "K", "kvalue", Str_k, "double");
+        pushToCloud(++obsCount, time, "pH", "phvalue", Str_ph, "double");
+        pushToCloud(++obsCount, time, "SN", "nvalue", Str_n, "double");
+        pushToCloud(++obsCount, time, "SP", "pvalue", Str_p, "double");
+        pushToCloud(++obsCount, time, "SK", "kvalue", Str_k, "double");
+       // pushToCloud(++obsCount, time, "SpH", "phvalue", Str_ph, "double");
         setObservationCount(obsCount);
         return null;
     }
@@ -56,7 +64,7 @@ public class RestReaderAsync extends AsyncTask<Void, Void, Void> {
             URLConnection conn = url.openConnection();
             conn.setDoOutput(true);
             OutputStreamWriter writer = new OutputStreamWriter(conn.getOutputStream());
-            String postURL = "key=dGNzLUludGVHcmEtRGlnaXRhbCBGYXJtaW5nLUt3aWskZW5zZS12MQ==&jsonData={\"request\":\"InsertObservation\",\"service\":\"SOS\",\"version\":\"2.0.0\",\"offering\":\"off-SoilHealthPOC\",\"observation\":{\"query_id\":\"" + "obs8888"+observationID + "\",\"sensor\":\"SoilHealthPOCParams\",\"feature\":\"SoilHealthPOC\",\"geometry\":{\"type\":\"Point\",\"coordinates\":[51.935101100104916,7.651968812254194]},\"phenomenonTime\":\"" + timeStamp + "\",\"resultTime\":\"" + timeStamp + "\",\"output\":[{\"property\": \"" + soilParameter + "\",\"unit\": \"" + unit + "\",\"value\": \"" + value + "\",\"type\": \"" + dataType + "\"}]}}";
+            String postURL = "key=dGNzLUludGVHcmEtRGlnaXRhbCBGYXJtaW5nLUt3aWskZW5zZS12MQ==&jsonData={\"request\":\"InsertObservation\",\"service\":\"SOS\",\"version\":\"2.0.0\",\"offering\":\"off-SoilHealthTest\",\"observation\":{\"query_id\":\"" + "SoilHealthTestObs"+observationID + "\",\"sensor\":\"SoilHealthTestParams\",\"feature\":\"SoilHealthTest\",\"geometry\":{\"type\":\"Point\",\"coordinates\":[51.935101100104916,7.651968812254194]},\"phenomenonTime\":\"" + timeStamp + "\",\"resultTime\":\"" + timeStamp + "\",\"output\":[{\"property\": \"" + soilParameter + "\",\"unit\": \"" + unit + "\",\"value\": \"" + value + "\",\"type\": \"" + dataType + "\"}]}}";
             writer.write(postURL);
             writer.flush();
             String line = null;
