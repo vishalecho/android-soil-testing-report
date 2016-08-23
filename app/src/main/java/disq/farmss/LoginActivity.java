@@ -3,10 +3,14 @@ package disq.farmss;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
-import android.view.Menu;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class LoginActivity extends ActionBarActivity{
@@ -22,12 +26,29 @@ public class LoginActivity extends ActionBarActivity{
         editTextMobile = (EditText)findViewById(R.id.ETmobile);
         editTextPassword = (EditText)findViewById(R.id.ETpassword);
         sharedPref = this.getSharedPreferences("MyPref", 0);
-    }
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.sync_menu, menu);
-        return super.onCreateOptionsMenu(menu);
+
+        final LinearLayout linearLayout = (LinearLayout) findViewById(R.id.LoginActivity_layout);
+        android.support.v7.app.ActionBar ab = getSupportActionBar();
+        TextView tv = new TextView(getApplicationContext());
+        RelativeLayout.LayoutParams lp = new RelativeLayout.LayoutParams(
+                ActionBar.LayoutParams.FILL_PARENT, // Width of TextView
+                ActionBar.LayoutParams.FILL_PARENT); // Height of TextView
+
+        // Apply the layout parameters to TextView widget
+        tv.setLayoutParams(lp);
+
+        // Set text to display in TextView
+        tv.setText(ab.getTitle());
+        tv.setTextSize(20);
+
+        // Set TextView text alignment to center
+        tv.setGravity(Gravity.CENTER);
+
+        // Set the ActionBar display option
+        ab.setDisplayOptions(ab.DISPLAY_SHOW_CUSTOM);
+
+        // Finally, set the newly created TextView as ActionBar custom view
+        ab.setCustomView(tv);
     }
 
     public void OnButtonClick(View view){
