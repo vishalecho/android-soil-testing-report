@@ -31,6 +31,8 @@ public class TestResultActivity extends ActionBarActivity {
         Date date= new Date();
         long time = date.getTime();
         Timestamp ts = new Timestamp(time);
+        String Time_Stamp = ts.toString();
+        Log.i(TAG, Time_Stamp);
 
         //Generating unique Transaction id
         String mob = sharedPref.getString("Login_Mobile",null);
@@ -38,6 +40,7 @@ public class TestResultActivity extends ActionBarActivity {
         SharedPreferences.Editor editor1 = sharedPref.edit();
         Log.i(TAG, Transaction_Id);
         editor1.putString("Transaction_ID",Transaction_Id);
+        editor1.putString("TimeStamp",Time_Stamp);
         editor1.commit();
 
         pH = (EditText) findViewById(R.id.phvalue);

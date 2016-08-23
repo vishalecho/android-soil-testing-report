@@ -7,6 +7,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
+import android.view.Menu;
 import android.view.View;
 import android.widget.EditText;
 
@@ -43,6 +44,12 @@ public class RecommendationActivity extends ActionBarActivity {
         RK = (EditText) findViewById(R.id.result_kvalue);
         RK.setText(String.valueOf(result_k));
 
+    }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.sync_menu, menu);
+        return super.onCreateOptionsMenu(menu);
     }
     @Override
     public void onBackPressed() {
@@ -97,6 +104,10 @@ public class RecommendationActivity extends ActionBarActivity {
         String Str_fn = String.valueOf(result_n);
         String Str_fp = String.valueOf(result_p);
         String Str_fk = String.valueOf(result_k);
+
+        //Current TimeStamp
+        String Current_Time_Stamp = sharedPref.getString("TimeStamp",null);
+        Log.i(TAG," TimeStamp : "+Current_Time_Stamp);
 
         SoilTestResultDBMethod str = new SoilTestResultDBMethod();
         str.setMobile(Str_mobile);
