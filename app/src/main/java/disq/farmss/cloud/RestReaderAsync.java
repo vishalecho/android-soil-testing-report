@@ -45,9 +45,9 @@ public class RestReaderAsync extends AsyncTask<Void, Void, Void> {
         pushToCloud(++obsCount, time, "P", "pvalue", Str_p, "double");
         pushToCloud(++obsCount, time, "K", "kvalue", Str_k, "double");
         pushToCloud(++obsCount, time, "pH", "phvalue", Str_ph, "double");
-        pushToCloud(++obsCount, time, "SN", "nvalue", Str_n, "double");
-        pushToCloud(++obsCount, time, "SP", "pvalue", Str_p, "double");
-        pushToCloud(++obsCount, time, "SK", "kvalue", Str_k, "double");
+        pushToCloud(++obsCount, time, "SN", "nvalue", Str_suggested_n, "double");
+        pushToCloud(++obsCount, time, "SP", "pvalue", Str_suggested_p, "double");
+        pushToCloud(++obsCount, time, "SK", "kvalue", Str_suggested_k, "double");
        // pushToCloud(++obsCount, time, "SpH", "phvalue", Str_ph, "double");
         setObservationCount(obsCount);
         return null;
