@@ -24,17 +24,17 @@ public class SelectCropActivity extends ActionBarActivity {
         setContentView(R.layout.activity_selectcrop);
         sharedPref = this.getSharedPreferences("MyPref", 0);
         AreaTpye= sharedPref.getString("land_type",null);
-        Log.i(TAG,"AreaType"+AreaTpye);
+        Log.i(TAG,"AreaType = "+AreaTpye);
         AreaValue = sharedPref.getFloat("plot_size",0.0f);
-        Log.i(TAG,"AreaValue"+AreaValue);
+        Log.i(TAG,"AreaValue = "+AreaValue);
         SN=sharedPref.getInt("N",0);
-        Log.i(TAG,"SN"+String.valueOf(SN));
+        Log.i(TAG,"SN ="+String.valueOf(SN));
         SP=sharedPref.getInt("P",0);
-        Log.i(TAG,"SP"+String.valueOf(SP));
+        Log.i(TAG,"SP ="+String.valueOf(SP));
         SK=sharedPref.getInt("K",0);
-        Log.i(TAG,"SK"+String.valueOf(SK));
+        Log.i(TAG,"SK ="+String.valueOf(SK));
     }
-    //Logic for calculating RecommendationActivity for cabbage
+    //calculating Fertilizer Recommendation for cabbage
     public void rec_cabbage(View view){
         try{
 
@@ -45,15 +45,18 @@ public class SelectCropActivity extends ActionBarActivity {
 
             double C1=2.17;
             FN=(((N1*T)-(N2*SN))*C1);
-            Log.i(TAG,"FN1"+Double.toString(FN));
+            if(FN<25)
+                FN=25;
+            Log.i(TAG,"FN1 ="+Double.toString(FN));
             //P
             Double N3=4.72;
             Double N4=2.34;
 
             double C2=6.25;
             FP=(((N3*T)-(N4*SP))*C2);
-            if(FP<25)FP=25;
-            Log.i(TAG,"FP1"+Double.toString(FP));
+            if(FP<25)
+                FP=25;
+            Log.i(TAG,"FP1 ="+Double.toString(FP));
 
             //K
             Double N5=6.68;
@@ -61,21 +64,25 @@ public class SelectCropActivity extends ActionBarActivity {
 
             double C3=1.72;
             FK=(((N5*T)-(N6*SK))*C3);
-            Log.i(TAG,"FK1"+Double.toString(FK));
+            if(FK<25)
+                FK=25;
+            Log.i(TAG,"FK1 ="+Double.toString(FK));
 
             //For Final Result
             if (AreaTpye.equals("Guntha")){
                 FN = FN*PerGuntha*AreaValue;
-                Log.i(TAG,"FN2"+Double.toString(FN));
+                Log.i(TAG,"FNG ="+Double.toString(FN));
                 FP = FP*PerGuntha*AreaValue;
-                Log.i(TAG,"FP2"+Double.toString(FP));
+                Log.i(TAG,"FPG ="+Double.toString(FP));
                 FK = FK*PerGuntha*AreaValue;
-                Log.i(TAG,"FK2"+Double.toString(FK));
+                Log.i(TAG,"FKG ="+Double.toString(FK));
             }else if (AreaTpye.equals("Acre")){
                 FN = FN*PerAcre*AreaValue;
+                Log.i(TAG,"FNA ="+Double.toString(FN));
                 FP = FP*PerAcre*AreaValue;
-                if(FP<25)FP=25;
+                Log.i(TAG,"FPA ="+Double.toString(FP));
                 FK = FK*PerAcre*AreaValue;
+                Log.i(TAG,"FKA ="+Double.toString(FK));
             }
         }catch (Exception e){
             System.out.print(e);
@@ -93,7 +100,7 @@ public class SelectCropActivity extends ActionBarActivity {
         finish();
     }
 
-    //Logic for calculating RecommendationActivity for onion
+    //calculating Fertilizer Recommendation for onion
     public void rec_onion(View view){
         try{
             int T=25;
@@ -103,7 +110,9 @@ public class SelectCropActivity extends ActionBarActivity {
 
             double C1=2.17;
             FN=(((N1*T)-(N2*SN))*C1);
-            Log.i(TAG,Double.toString(FN));
+            if(FN<25)
+                FN=25;
+            Log.i(TAG,"FN1 ="+Double.toString(FN));
 
             //P
             Double N3=4.00;
@@ -111,8 +120,9 @@ public class SelectCropActivity extends ActionBarActivity {
 
             double C2=6.25;
             FP=(((N3*T)-(N4*SP))*C2);
-            if(FP<25)FP=25;
-            Log.i(TAG,Double.toString(FP));
+            if(FP<25)
+                FP=25;
+            Log.i(TAG,"FP1 ="+Double.toString(FP));
 
             //K
             Double N5=3.10;
@@ -120,17 +130,25 @@ public class SelectCropActivity extends ActionBarActivity {
 
             double C3=1.72;
             FK=(((N5*T)-(N6*SK))*C3);
-            Log.i(TAG,Double.toString(FK));
+            if(FK<25)
+                FK=25;
+            Log.i(TAG,"FK1 ="+Double.toString(FK));
 
             //For Final Result
             if (AreaTpye.equals("Guntha")){
                 FN = FN*PerGuntha*AreaValue;
+                Log.i(TAG,"FNG ="+Double.toString(FN));
                 FP = FP*PerGuntha*AreaValue;
+                Log.i(TAG,"FPG ="+Double.toString(FP));
                 FK = FK*PerGuntha*AreaValue;
+                Log.i(TAG,"FKG ="+Double.toString(FK));
             }else if (AreaTpye.equals("Acre")){
                 FN = FN*PerAcre*AreaValue;
+                Log.i(TAG,"FNA ="+Double.toString(FN));
                 FP = FP*PerAcre*AreaValue;
+                Log.i(TAG,"FPA ="+Double.toString(FP));
                 FK = FK*PerAcre*AreaValue;
+                Log.i(TAG,"FKA ="+Double.toString(FK));
             }
 
         }catch (Exception e){
@@ -159,7 +177,9 @@ public class SelectCropActivity extends ActionBarActivity {
 
             double C1=2.17;
             FN=(((N1*T)-(N2*SN))*C1);
-            Log.i(TAG,Double.toString(FN));
+            if(FN<25)
+                FN=25;
+            Log.i(TAG,"FN1 ="+Double.toString(FN));
 
             //P
             Double N3=3.88;
@@ -167,8 +187,9 @@ public class SelectCropActivity extends ActionBarActivity {
 
             double C2=6.25;
             FP=(((N3*T)-(N4*SP))*C2);
-            if(FP<25)FP=25;
-            Log.i(TAG,Double.toString(FP));
+            if(FP<25)
+                FP=25;
+            Log.i(TAG,"FP1 ="+Double.toString(FP));
 
             //K
             Double N5=5.16;
@@ -176,17 +197,25 @@ public class SelectCropActivity extends ActionBarActivity {
 
             double C3=1.72;
             FK=(((N5*T)-(N6*SK))*C3);
-            Log.i(TAG,Double.toString(FK));
+            if(FK<25)
+                FK=25;
+            Log.i(TAG,"FK1 ="+Double.toString(FK));
 
             //For Final Result
             if (AreaTpye.equals("Guntha")){
                 FN = FN*PerGuntha*AreaValue;
+                Log.i(TAG,"FNG ="+Double.toString(FN));
                 FP = FP*PerGuntha*AreaValue;
+                Log.i(TAG,"FPG ="+Double.toString(FP));
                 FK = FK*PerGuntha*AreaValue;
+                Log.i(TAG,"FKG ="+Double.toString(FK));
             }else if (AreaTpye.equals("Acre")){
                 FN = FN*PerAcre*AreaValue;
+                Log.i(TAG,"FNA ="+Double.toString(FN));
                 FP = FP*PerAcre*AreaValue;
+                Log.i(TAG,"FPA ="+Double.toString(FP));
                 FK = FK*PerAcre*AreaValue;
+                Log.i(TAG,"FKA ="+Double.toString(FK));
             }
 
         }catch (Exception e){
@@ -205,7 +234,7 @@ public class SelectCropActivity extends ActionBarActivity {
         finish();
     }
 
-    //Logic for calculating RecommendationActivity for chilli
+    // calculating Fertilizer Recommendation for chilly
     public void rec_chilli(View view){
         try{
             int T=7;
@@ -215,7 +244,9 @@ public class SelectCropActivity extends ActionBarActivity {
 
             double C1=2.17;
             FN=(((N1*T)-(N2*SN))*C1);
-            Log.i(TAG,Double.toString(FN));
+            if(FN<25)
+                FN=25;
+            Log.i(TAG,"FN1 ="+Double.toString(FN));
 
             //P
             Double N3=27.09;
@@ -223,8 +254,9 @@ public class SelectCropActivity extends ActionBarActivity {
 
             double C2=6.25;
             FP=(((N3*T)-(N4*SP))*C2);
-            if(FP<25)FP=25;
-            Log.i(TAG,Double.toString(FP));
+            if(FP<25)
+                FP=25;
+            Log.i(TAG,"FP1 ="+Double.toString(FP));
 
             //K
             Double N5=36.48;
@@ -232,17 +264,25 @@ public class SelectCropActivity extends ActionBarActivity {
 
             double C3=1.72;
             FK=(((N5*T)-(N6*SK))*C3);
-            Log.i(TAG,Double.toString(FK));
+            if(FK<25)
+                FK=25;
+            Log.i(TAG,"FK1 ="+Double.toString(FK));
 
             //For Final Result
             if (AreaTpye.equals("Guntha")){
                 FN = FN*PerGuntha*AreaValue;
+                Log.i(TAG,"FNG ="+Double.toString(FN));
                 FP = FP*PerGuntha*AreaValue;
+                Log.i(TAG,"FPG ="+Double.toString(FP));
                 FK = FK*PerGuntha*AreaValue;
+                Log.i(TAG,"FKG ="+Double.toString(FK));
             }else if (AreaTpye.equals("Acre")){
                 FN = FN*PerAcre*AreaValue;
+                Log.i(TAG,"FNA ="+Double.toString(FN));
                 FP = FP*PerAcre*AreaValue;
+                Log.i(TAG,"FPA ="+Double.toString(FP));
                 FK = FK*PerAcre*AreaValue;
+                Log.i(TAG,"FKA ="+Double.toString(FK));
             }
 
         }catch (Exception e){

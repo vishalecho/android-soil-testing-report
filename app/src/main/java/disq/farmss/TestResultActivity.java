@@ -51,7 +51,7 @@ public class TestResultActivity extends ActionBarActivity {
         String Zero = "0";
         pH.setText(Zero);
         N.setText(Zero);
-        P.setText(Zero);
+        P.setText(temp1);
         K.setText(Zero);
         button_selectcrop = (Button) findViewById(R.id.btn_selectCrop);
         button_selectcrop.setOnClickListener(

@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -18,13 +19,22 @@ import java.util.HashMap;
 
 public class AddPlotSizeActivity extends ActionBarActivity {
 
-    RadioGroup PlotType;
-    RadioButton rb;
+    RadioGroup radioGroup;
+    RadioButton radioButton;
     EditText plotSize;
     int selectedID;
     HashMap<String ,String> convert = new HashMap<String,String>();
     Context context;
     String rb1;
+    String TAG = "disq.farmss:";
+
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_add_plot_size);
+        plotSize = (EditText)findViewById(R.id.PlotSizeValue);
+    }
 
     @Override
     public void onBackPressed() {
@@ -60,19 +70,6 @@ public class AddPlotSizeActivity extends ActionBarActivity {
     }
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_add_plot_size);
-        convert.put(getString(R.string.Guntha),getString(R.string.guntha));
-        convert.put(getString(R.string.Acre),getString(R.string.acre));
-        context = this;
-        PlotType = (RadioGroup)findViewById(R.id.plotType);
-        selectedID = PlotType.getCheckedRadioButtonId();
-        rb = (RadioButton)findViewById(selectedID);
-        plotSize = (EditText)findViewById(R.id.PlotSizeValue);
-        rb1 = rb.getText().toString();
-    }
-    @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_tab, menu);
@@ -100,10 +97,21 @@ public class AddPlotSizeActivity extends ActionBarActivity {
     }
     public void FindDevice(View view){
         if(view.getId()==R.id.addPlotSize){
-            if(plotSize.getText().toString().length()==0){
-                plotSize.setBackgroundResource(R.drawable.edittextstyle);
-            }else{
-                plotSize.setError(null);
+            if(Validation()){
+                radioGroup = (RadioGroup)findViewById(R.id.plotType);
+                selectedID = radioGroup.getCheckedRadioButtonId();
+                radioButton = (RadioButton)findViewById(selectedID);
+                rb1 = (String) radioButton.getText();
+                Log.d(TAG, "AreaType ="+rb1);
+
+                if (rb1.equals(getString(R.string.Guntha)))
+                {
+                    convert.put(rb1,getString(R.string.guntha));
+                }else if (rb1.equals(getString(R.string.Acre))){
+                    convert.put(rb1,getString(R.string.acre));
+                }
+                context = this;
+
                 SharedPreferences sharedPref = context.getSharedPreferences("MyPref", 0);
                 SharedPreferences.Editor editor = sharedPref.edit();
                 editor.putString("land_type",convert.get(rb1));
@@ -114,6 +122,19 @@ public class AddPlotSizeActivity extends ActionBarActivity {
                 finish();
             }
 
+
+
         }
+    }
+
+    private boolean Validation() {
+        boolean valid=true;
+        if(plotSize.getText().toString().length()==0){
+            plotSize.setBackgroundResource(R.drawable.edittextstyle);
+            valid = false;
+        }else{
+            plotSize.setError(null);
+        }
+        return valid;
     }
 }
