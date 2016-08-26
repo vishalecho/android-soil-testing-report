@@ -69,7 +69,8 @@
         android:textColor="#00685B"
         android:textSize="18sp"
         android:id="@+id/txt_finddeviceprocess"
-        android:layout_marginBottom="156dp"
+        android:layout_marginBottom="183dp"
         android:layout_alignBottom="@+id/findmachine_circle"
         android:layout_centerHorizontal="true" />
+    
 </RelativeLayout>

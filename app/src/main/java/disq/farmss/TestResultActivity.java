@@ -61,19 +61,19 @@ public class TestResultActivity extends ActionBarActivity {
                         SharedPreferences.Editor editor = sharedPref.edit();
 
                         int int_pH = Integer.parseInt(pH.getText().toString());
-                        Log.i(TAG, String.valueOf(int_pH));
+                        Log.i(TAG, "ph= "+String.valueOf(int_pH));
                         editor.putInt("pH",int_pH);
 
                         int int_n= Integer.parseInt(N.getText().toString());
-                        Log.i(TAG, String.valueOf(int_n));
+                        Log.i(TAG, "n= "+String.valueOf(int_n));
                         editor.putInt("N",int_n);
 
                         int int_p= Integer.parseInt(P.getText().toString());
-                        Log.i(TAG, String.valueOf(int_p));
+                        Log.i(TAG, "p= "+String.valueOf(int_p));
                         editor.putInt("P",int_p);
 
                         int int_k= Integer.parseInt(K.getText().toString());
-                        Log.i(TAG, String.valueOf(int_k));
+                        Log.i(TAG, "k= "+String.valueOf(int_k));
                         editor.putInt("K",int_k);
 
                         Intent intent = new Intent(TestResultActivity.this,SelectCropActivity.class);

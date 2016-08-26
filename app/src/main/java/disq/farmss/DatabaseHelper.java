@@ -12,7 +12,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 public class DatabaseHelper extends SQLiteOpenHelper {
 
     String TAG = "disq.farmss:";
-    public static final int DATABASE_VERSION= 3;
+    public static final int DATABASE_VERSION= 4;
     public static final String DATABASE_NAME = "farmss.db";
     //Customer_Table
     public static final String TABLE_NAME = "tbl_customer";
@@ -34,6 +34,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String ST_N_VALUE ="st_n";
     public static final String ST_P_VALUE ="st_p";
     public static final String ST_K_VALUE ="st_k";
+    public static final String ST_SELECTED_CROP = "st_crop";
     public static final String ST_FN_VALUE ="st_fn";
     public static final String ST_FP_VALUE ="st_fp";
     public static final String ST_FK_VALUE ="st_fk";
@@ -45,7 +46,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             "cust_name text not null, cust_pass text not null, cust_district text, cust_tehsil text, cust_village text, cust_pincode text );";
 
     private static final String TABLE_SOILTEST_CREATE="create table tbl_soiltest (st_mobile text not null ,st_tid text not null , st_areatype text , st_areavalue text ,  "+
-            "st_ph text ,st_n text , st_p text , st_k text , st_fn text , st_fp text , st_fk text );";
+            "st_ph text ,st_n text , st_p text , st_k text , st_crop, st_fn text , st_fp text , st_fk text );";
 
     public DatabaseHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -137,6 +138,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         cv.put(ST_N_VALUE,str.getN());
         cv.put(ST_P_VALUE,str.getP());
         cv.put(ST_K_VALUE,str.getK());
+        cv.put(ST_SELECTED_CROP,str.getCrop());
         cv.put(ST_FN_VALUE,str.getFN());
         cv.put(ST_FP_VALUE,str.getFP());
         cv.put(ST_FK_VALUE,str.getFK());

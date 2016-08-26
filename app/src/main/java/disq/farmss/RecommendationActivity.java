@@ -25,24 +25,37 @@ public class RecommendationActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recommendation);
         sharedPref = this.getSharedPreferences("MyPref", 0);
-
+        SharedPreferences.Editor editor = sharedPref.edit();
         Intent i = getIntent();
         Bundle b = i.getExtras();
 
         result_n = (int) b.getDouble("FNC");
-        Log.i(TAG,Double.toString(result_n));
+        Log.i(TAG,"Suggested_FN = "+Double.toString(result_n));
         RN = (EditText) findViewById(R.id.result_nvalue);
         RN.setText(String.valueOf(result_n));
+        editor.putInt("Suggested_N", result_n);
 
         result_p = (int) b.getDouble("FPC");
-        Log.i(TAG,Double.toString(result_p));
+        Log.i(TAG,"Suggested_FP = "+Double.toString(result_p));
         RP = (EditText) findViewById(R.id.result_pvalue);
         RP.setText(String.valueOf(result_p));
+        editor.putInt("Suggested_P", result_p);
 
         result_k =(int)  b.getDouble("FKC");
-        Log.i(TAG,Double.toString(result_k));
+        Log.i(TAG,"Suggested_FK = "+Double.toString(result_k));
         RK = (EditText) findViewById(R.id.result_kvalue);
         RK.setText(String.valueOf(result_k));
+        editor.putInt("Suggested_K", result_k);
+        editor.commit();
+
+        if(String.valueOf(result_n) != null && !String.valueOf(result_n).isEmpty()){
+           if (String.valueOf(result_p) != null && !String.valueOf(result_p).isEmpty()){
+               if (String.valueOf(result_k) != null && !String.valueOf(result_k).isEmpty()){
+                   InsertSoilTestResult();
+                   new RestReaderAsync(getApplicationContext()).execute();
+               }
+           }
+        }
 
     }
     @Override
@@ -86,8 +99,6 @@ public class RecommendationActivity extends ActionBarActivity {
 
     public void Open_Login_Register(View view){
         Intent intent = new Intent(RecommendationActivity.this,AddPlotSizeActivity.class);
-        InsertSoilTestResult();
-        new RestReaderAsync(getApplicationContext()).execute();
         startActivity(intent);
         finish();
     }
@@ -101,13 +112,15 @@ public class RecommendationActivity extends ActionBarActivity {
         String Str_n = String.valueOf(sharedPref.getInt("N",0));
         String Str_p = String.valueOf(sharedPref.getInt("P",0));
         String Str_k = String.valueOf(sharedPref.getInt("K",0));
+        String Str_crop = sharedPref.getString("Selected_Crop",null);
+        Log.d(TAG, "Selected_Crop : "+Str_crop);
         String Str_fn = String.valueOf(result_n);
         String Str_fp = String.valueOf(result_p);
         String Str_fk = String.valueOf(result_k);
 
         //Current TimeStamp
         String Current_Time_Stamp = sharedPref.getString("TimeStamp",null);
-        Log.i(TAG," TimeStamp : "+Current_Time_Stamp);
+        Log.i(TAG,"TimeStamp : "+Current_Time_Stamp);
 
         SoilTestResultDBMethod str = new SoilTestResultDBMethod();
         str.setMobile(Str_mobile);
@@ -118,15 +131,16 @@ public class RecommendationActivity extends ActionBarActivity {
         str.setN(Str_n);
         str.setP(Str_p);
         str.setK(Str_k);
+        str.setCrop(Str_crop);
         str.setFN(Str_fn);
         str.setFP(Str_fp);
         str.setFK(Str_fk);
 
         long res = dbhelper.insertSoilTestData(str);
         if (res==-1){
-            Log.i(TAG," SoilTest Data is not Inserted ");
+            Log.i(TAG,"SoilTest Data is not Inserted ");
         }else {
-            Log.i(TAG," SoilTest Result is Inserted ");
+            Log.i(TAG,"SoilTest Result is Inserted ");
         }
     }
 }

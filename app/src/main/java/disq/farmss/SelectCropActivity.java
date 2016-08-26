@@ -28,11 +28,11 @@ public class SelectCropActivity extends ActionBarActivity {
         AreaValue = sharedPref.getFloat("plot_size",0.0f);
         Log.i(TAG,"AreaValue = "+AreaValue);
         SN=sharedPref.getInt("N",0);
-        Log.i(TAG,"SN ="+String.valueOf(SN));
+        Log.i(TAG,"SN = "+String.valueOf(SN));
         SP=sharedPref.getInt("P",0);
-        Log.i(TAG,"SP ="+String.valueOf(SP));
+        Log.i(TAG,"SP = "+String.valueOf(SP));
         SK=sharedPref.getInt("K",0);
-        Log.i(TAG,"SK ="+String.valueOf(SK));
+        Log.i(TAG,"SK = "+String.valueOf(SK));
     }
     //calculating Fertilizer Recommendation for cabbage
     public void rec_cabbage(View view){
@@ -47,7 +47,7 @@ public class SelectCropActivity extends ActionBarActivity {
             FN=(((N1*T)-(N2*SN))*C1);
             if(FN<25)
                 FN=25;
-            Log.i(TAG,"FN1 ="+Double.toString(FN));
+            Log.i(TAG,"FN = "+Double.toString(FN));
             //P
             Double N3=4.72;
             Double N4=2.34;
@@ -56,7 +56,7 @@ public class SelectCropActivity extends ActionBarActivity {
             FP=(((N3*T)-(N4*SP))*C2);
             if(FP<25)
                 FP=25;
-            Log.i(TAG,"FP1 ="+Double.toString(FP));
+            Log.i(TAG,"FP = "+Double.toString(FP));
 
             //K
             Double N5=6.68;
@@ -66,23 +66,23 @@ public class SelectCropActivity extends ActionBarActivity {
             FK=(((N5*T)-(N6*SK))*C3);
             if(FK<25)
                 FK=25;
-            Log.i(TAG,"FK1 ="+Double.toString(FK));
+            Log.i(TAG,"FK = "+Double.toString(FK));
 
             //For Final Result
             if (AreaTpye.equals("Guntha")){
                 FN = FN*PerGuntha*AreaValue;
-                Log.i(TAG,"FNG ="+Double.toString(FN));
+                Log.i(TAG,"FNG = "+Double.toString(FN));
                 FP = FP*PerGuntha*AreaValue;
-                Log.i(TAG,"FPG ="+Double.toString(FP));
+                Log.i(TAG,"FPG = "+Double.toString(FP));
                 FK = FK*PerGuntha*AreaValue;
-                Log.i(TAG,"FKG ="+Double.toString(FK));
+                Log.i(TAG,"FKG = "+Double.toString(FK));
             }else if (AreaTpye.equals("Acre")){
                 FN = FN*PerAcre*AreaValue;
-                Log.i(TAG,"FNA ="+Double.toString(FN));
+                Log.i(TAG,"FNA = "+Double.toString(FN));
                 FP = FP*PerAcre*AreaValue;
-                Log.i(TAG,"FPA ="+Double.toString(FP));
+                Log.i(TAG,"FPA = "+Double.toString(FP));
                 FK = FK*PerAcre*AreaValue;
-                Log.i(TAG,"FKA ="+Double.toString(FK));
+                Log.i(TAG,"FKA = "+Double.toString(FK));
             }
         }catch (Exception e){
             System.out.print(e);
@@ -95,7 +95,10 @@ public class SelectCropActivity extends ActionBarActivity {
         intent.putExtras(b);
         b.putDouble("FKC", FK);
         intent.putExtras(b);
-
+        sharedPref = this.getSharedPreferences("MyPref", 0);
+        SharedPreferences.Editor editor = sharedPref.edit();
+        editor.putString("Selected_Crop", "Cabbage");
+        editor.commit();
         startActivity(intent);
         finish();
     }
@@ -112,7 +115,7 @@ public class SelectCropActivity extends ActionBarActivity {
             FN=(((N1*T)-(N2*SN))*C1);
             if(FN<25)
                 FN=25;
-            Log.i(TAG,"FN1 ="+Double.toString(FN));
+            Log.i(TAG,"FN ="+Double.toString(FN));
 
             //P
             Double N3=4.00;
@@ -122,7 +125,7 @@ public class SelectCropActivity extends ActionBarActivity {
             FP=(((N3*T)-(N4*SP))*C2);
             if(FP<25)
                 FP=25;
-            Log.i(TAG,"FP1 ="+Double.toString(FP));
+            Log.i(TAG,"FP ="+Double.toString(FP));
 
             //K
             Double N5=3.10;
@@ -132,7 +135,7 @@ public class SelectCropActivity extends ActionBarActivity {
             FK=(((N5*T)-(N6*SK))*C3);
             if(FK<25)
                 FK=25;
-            Log.i(TAG,"FK1 ="+Double.toString(FK));
+            Log.i(TAG,"FK ="+Double.toString(FK));
 
             //For Final Result
             if (AreaTpye.equals("Guntha")){
@@ -162,6 +165,11 @@ public class SelectCropActivity extends ActionBarActivity {
         intent.putExtras(b);
         b.putDouble("FKC", FK);
         intent.putExtras(b);
+
+        sharedPref = this.getSharedPreferences("MyPref", 0);
+        SharedPreferences.Editor editor = sharedPref.edit();
+        editor.putString("Selected_Crop", "Onion");
+        editor.commit();
 
         startActivity(intent);
         finish();
@@ -179,7 +187,7 @@ public class SelectCropActivity extends ActionBarActivity {
             FN=(((N1*T)-(N2*SN))*C1);
             if(FN<25)
                 FN=25;
-            Log.i(TAG,"FN1 ="+Double.toString(FN));
+            Log.i(TAG,"FN ="+Double.toString(FN));
 
             //P
             Double N3=3.88;
@@ -189,7 +197,7 @@ public class SelectCropActivity extends ActionBarActivity {
             FP=(((N3*T)-(N4*SP))*C2);
             if(FP<25)
                 FP=25;
-            Log.i(TAG,"FP1 ="+Double.toString(FP));
+            Log.i(TAG,"FP ="+Double.toString(FP));
 
             //K
             Double N5=5.16;
@@ -199,7 +207,7 @@ public class SelectCropActivity extends ActionBarActivity {
             FK=(((N5*T)-(N6*SK))*C3);
             if(FK<25)
                 FK=25;
-            Log.i(TAG,"FK1 ="+Double.toString(FK));
+            Log.i(TAG,"FK ="+Double.toString(FK));
 
             //For Final Result
             if (AreaTpye.equals("Guntha")){
@@ -229,6 +237,11 @@ public class SelectCropActivity extends ActionBarActivity {
         intent.putExtras(b);
         b.putDouble("FKC", FK);
         intent.putExtras(b);
+
+        sharedPref = this.getSharedPreferences("MyPref", 0);
+        SharedPreferences.Editor editor = sharedPref.edit();
+        editor.putString("Selected_Crop", "Tomato");
+        editor.commit();
 
         startActivity(intent);
         finish();
@@ -246,7 +259,7 @@ public class SelectCropActivity extends ActionBarActivity {
             FN=(((N1*T)-(N2*SN))*C1);
             if(FN<25)
                 FN=25;
-            Log.i(TAG,"FN1 ="+Double.toString(FN));
+            Log.i(TAG,"FN ="+Double.toString(FN));
 
             //P
             Double N3=27.09;
@@ -256,7 +269,7 @@ public class SelectCropActivity extends ActionBarActivity {
             FP=(((N3*T)-(N4*SP))*C2);
             if(FP<25)
                 FP=25;
-            Log.i(TAG,"FP1 ="+Double.toString(FP));
+            Log.i(TAG,"FP ="+Double.toString(FP));
 
             //K
             Double N5=36.48;
@@ -266,7 +279,7 @@ public class SelectCropActivity extends ActionBarActivity {
             FK=(((N5*T)-(N6*SK))*C3);
             if(FK<25)
                 FK=25;
-            Log.i(TAG,"FK1 ="+Double.toString(FK));
+            Log.i(TAG,"FK ="+Double.toString(FK));
 
             //For Final Result
             if (AreaTpye.equals("Guntha")){
@@ -296,6 +309,11 @@ public class SelectCropActivity extends ActionBarActivity {
         intent.putExtras(b);
         b.putDouble("FKC", FK);
         intent.putExtras(b);
+
+        sharedPref = this.getSharedPreferences("MyPref", 0);
+        SharedPreferences.Editor editor = sharedPref.edit();
+        editor.putString("Selected_Crop", "Chilly");
+        editor.commit();
 
         startActivity(intent);
         finish();

@@ -4,7 +4,7 @@ package disq.farmss;
  * Created by vishal on 25/7/16.
  */
 public class SoilTestResultDBMethod {
-    String mobile,TID,areaType,areaValue,pH,N,P,K,FN,FP,FK;
+    String mobile,TID,areaType,areaValue,pH,N,P,K,Crop,FN,FP,FK;
 
     public void setMobile(String mobile){ this.mobile = mobile;}
     public String getMobile(){return this.mobile;}
@@ -29,6 +29,9 @@ public class SoilTestResultDBMethod {
 
     public void setK(String K){this.K=K;}
     public String getK(){return this.K;}
+
+    public void setCrop(String Crop){this.Crop=Crop;}
+    public String getCrop(){return this.Crop;}
 
     public void setFN(String FN){this.FN=FN;}
     public String getFN(){return this.FN;}

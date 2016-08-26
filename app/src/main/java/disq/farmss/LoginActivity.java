@@ -40,6 +40,7 @@ public class LoginActivity extends ActionBarActivity{
         // Set text to display in TextView
         tv.setText(ab.getTitle());
         tv.setTextSize(20);
+        tv.setTextColor(getResources().getColor(R.color.actionbar_text));
 
         // Set TextView text alignment to center
         tv.setGravity(Gravity.CENTER);

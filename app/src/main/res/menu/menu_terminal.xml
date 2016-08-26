@@ -4,10 +4,12 @@
 
     <item android:id="@+id/action_connect"
         android:title="@string/action_connect"
+        android:icon="@drawable/ic_bluetooth_searching_black_24dp"
         app:showAsAction="always" />
 
     <item android:id="@+id/action_disconnect"
         android:title="@string/action_disconnect"
+        android:icon="@drawable/ic_bluetooth_disabled_black_24dp"
         android:visible="false"
         app:showAsAction="always" />
 

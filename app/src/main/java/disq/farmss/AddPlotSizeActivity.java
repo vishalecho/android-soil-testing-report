@@ -102,7 +102,7 @@ public class AddPlotSizeActivity extends ActionBarActivity {
                 selectedID = radioGroup.getCheckedRadioButtonId();
                 radioButton = (RadioButton)findViewById(selectedID);
                 rb1 = (String) radioButton.getText();
-                Log.d(TAG, "AreaType ="+rb1);
+                Log.d(TAG, "AreaType = "+rb1);
 
                 if (rb1.equals(getString(R.string.Guntha)))
                 {

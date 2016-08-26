@@ -38,9 +38,9 @@ public class RestReaderAsync extends AsyncTask<Void, Void, Void> {
         String Str_p = String.valueOf(sharedPref.getInt("P",0));
         String Str_k = String.valueOf(sharedPref.getInt("K",0));
         //String Str_suggested_ph = String.valueOf(sharedPref.getInt("SpH",0));
-        String Str_suggested_n = String.valueOf(sharedPref.getInt("SN",0));
-        String Str_suggested_p = String.valueOf(sharedPref.getInt("SP",0));
-        String Str_suggested_k = String.valueOf(sharedPref.getInt("SK",0));
+        String Str_suggested_n = String.valueOf(sharedPref.getInt("Suggested_N",0));
+        String Str_suggested_p = String.valueOf(sharedPref.getInt("Suggested_P",0));
+        String Str_suggested_k = String.valueOf(sharedPref.getInt("Suggested_K",0));
         pushToCloud(++obsCount, time, "N", "nvalue", Str_n, "double");
         pushToCloud(++obsCount, time, "P", "pvalue", Str_p, "double");
         pushToCloud(++obsCount, time, "K", "kvalue", Str_k, "double");
